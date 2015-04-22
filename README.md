@@ -6,9 +6,9 @@ omd-docker
 Run from Docker Hub
 -------------------
 
-A pre-built image is available on [Docker Hub](https://registry.hub.docker.com/u/glichti/omd-docker) and can be run as follows:
+A pre-built image is available on [Docker Hub](https://registry.hub.docker.com/u/lichti/omd-docker) and can be run as follows:
 
-    docker run -t -p 80:5000 --name 'omd-docker' --hostname 'omd-docker' glichti/omd-docker
+    docker run -t -p 80:5000 --name 'omd-docker' --hostname 'omd-docker' lichti/omd-docker
 
 This will leave a shell open to access the container.
 
@@ -21,6 +21,6 @@ Build from Source
 
 The Docker image can be built as follows:
 
-    git clone https://github.com/glichti/omd-docker
+    git clone https://github.com/lichti/omd-docker
     cd omd-docker
-    docker build -t="glichti/omd-docker" .
+    docker build -t="lichti/omd-docker" .

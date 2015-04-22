@@ -1,7 +1,7 @@
 # Open Monitoring Distribution
 ## Version: 0.1
 FROM ubuntu:14.04
-MAINTAINER Gustavo Lichti <gustavo.lichti@trikan.com.br>
+MAINTAINER Gustavo Lichti <gustavo@lichti.com.br>
 
 ENV DEBIAN_FRONTEND noninteractive
 

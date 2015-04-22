@@ -8,7 +8,7 @@ Run from Docker Hub
 
 A pre-built image is available on [Docker Hub](https://registry.hub.docker.com/u/lichti/omd-docker) and can be run as follows:
 
-    docker run -t -p 80:5000 --name 'omd-docker' --hostname 'omd-docker' lichti/omd-docker
+    docker run -d -t -p 80:80 --name 'omd-docker' --hostname 'omd-docker' lichti/omd-docker
 
 This will leave a shell open to access the container.
 

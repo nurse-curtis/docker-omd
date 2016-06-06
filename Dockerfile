@@ -1,7 +1,8 @@
 # Open Monitoring Distribution
 ## Version: 0.1
-FROM ubuntu:14.04
-MAINTAINER Gustavo Lichti <gustavo.lichti@trikan.com.br>
+FROM phusion/baseimage
+#MAINTAINER Gustavo Lichti <gustavo.lichti@trikan.com.br>
+MAINTAINER xforty technologies "xforty.com"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -17,7 +18,7 @@ RUN apt-get update
 RUN apt-get install -y libpython2.7 omd locales tzdata
 
 #Set timezone
-RUN echo "America/Sao_Paulo" > /etc/timezone; dpkg-reconfigure tzdata
+RUN echo "America/New_York" > /etc/timezone; dpkg-reconfigure tzdata
 #Set locale
 RUN export LANGUAGE=en_US.UTF-8; export LANG=en_US.UTF-8; export LC_ALL=en_US.UTF-8; locale-gen en_US.UTF-8; dpkg-reconfigure locales
 
@@ -29,8 +30,5 @@ RUN omd config default set TMPFS off
 RUN omd config default set APACHE_TCP_ADDR 0.0.0.0
 
 # Add watchdog script
-ADD entrypoint.sh /entrypoint.sh
-
-# Set up runtime options
-EXPOSE 80 5000
-ENTRYPOINT ["/entrypoint.sh"]
+ADD apache.sh /etc/service/apache/run
+ADD omd.sh /etc/service/omd/run

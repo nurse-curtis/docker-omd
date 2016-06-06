@@ -1,14 +1,14 @@
-omd-docker
+Docker OMD
 ==========
 
 [Dockerfile](https://www.docker.com) for [Open Monitoring Distribution (OMD)](http://omdistro.org).
 
-Run from Docker Hub
--------------------
+Synopsis
+--------
 
-A pre-built image is available on [Docker Hub](https://registry.hub.docker.com/u/lichti/omd-docker) and can be run as follows:
+Can be run as follows:
 
-    docker run -d -t -p 80:80 --name 'omd-docker' --hostname 'omd-docker' lichti/omd-docker
+    docker run -d -t -p 80:80 --name 'omd' --hostname 'omd' -v /local/main.mk:/omd/sites/default/etc/check_mk/main.mk xforty.net/omd
 
 This will leave a shell open to access the container.
 
@@ -21,6 +21,6 @@ Build from Source
 
 The Docker image can be built as follows:
 
-    git clone https://github.com/lichti/omd-docker
-    cd omd-docker
-    docker build -t="lichti/omd-docker" .
+    git clone https://github.com/xforty/docker-omd
+    cd docker-omd
+    docker build -t="xforty.net/omd" .
